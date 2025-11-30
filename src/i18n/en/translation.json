@@ -1,0 +1,279 @@
+{
+  "app": {
+    "nameEn": "Sa3dny",
+    "nameAr": "ساعدني",
+    "tagline": "Home services that feel personal.",
+    "description": "Sa3dny connects households with vetted specialists for cleaning, nursing, elderly care, and upholstery care across Egypt."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "addresses": "Addresses",
+    "orders": "Orders",
+    "reviews": "Reviews",
+    "admin": "Admin",
+    "support": "Support",
+    "login": "Login",
+    "register": "Register"
+  },
+  "footer": {
+    "description": "A trusted platform that blends Arabic hospitality with modern technology for every home service.",
+    "links": "Quick links",
+    "contact": "Contact",
+    "phone": "Phone",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "terms": "Terms",
+    "privacy": "Privacy"
+  },
+  "actions": {
+    "bookService": "Book a service",
+    "learnMore": "Learn how it works",
+    "getStarted": "Get started",
+    "viewDetails": "View details",
+    "viewAll": "View all",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "upload": "Upload",
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "assign": "Assign",
+    "confirm": "Confirm",
+    "download": "Download",
+    "copy": "Copy",
+    "apply": "Apply filters",
+    "reset": "Reset",
+    "clear": "Clear",
+    "logout": "Logout"
+  },
+  "status": {
+    "submitted": "Submitted",
+    "awaitingPayment": "Awaiting Payment Confirmation",
+    "paymentConfirmed": "Payment Confirmed",
+    "assigned": "Assigned",
+    "inProgress": "In Progress",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  },
+  "roles": {
+    "client": "Client",
+    "admin": "Admin",
+    "support": "Customer Support"
+  },
+  "forms": {
+    "name": "Full name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "phone": "Phone number",
+    "category": "Category",
+    "service": "Service",
+    "date": "Date",
+    "time": "Time",
+    "duration": "Duration",
+    "address": "Address",
+    "notes": "Notes",
+    "paymentMethod": "Payment method",
+    "instapay": "Instapay transfer",
+    "onlinePayment": "Online payment",
+    "screenshot": "Upload screenshot",
+    "idFront": "National ID - Front",
+    "idBack": "National ID - Back",
+    "uploadPrompt": "Drag & drop or click to upload"
+  },
+  "categories": {
+    "housekeeping": "Housekeeping",
+    "nursing": "Nursing",
+    "elderly": "Elderly Care",
+    "carpets": "Carpets & Upholstery"
+  },
+  "servicesDictionary": {
+    "svc-deep-clean": "Deep Cleaning",
+    "svc-quick-visit": "Quick Visit",
+    "svc-post-op": "Post-Op Nursing",
+    "svc-daily-check": "Daily Health Check",
+    "svc-elderly-day": "Day Companion",
+    "svc-elderly-night": "Night Companion",
+    "svc-carpet": "Carpet Steam Clean",
+    "svc-sofa": "Sofa & Mattress Refresh"
+  },
+  "levels": {
+    "Bronze": "Bronze",
+    "Silver": "Silver",
+    "Gold": "Gold"
+  },
+  "home": {
+    "heroTitle": "On-demand home services, trusted and transparent",
+    "heroSubtitle": "Sa3dny connects you to vetted workers for cleaning, nursing, and elderly care with clear pricing and real-time tracking.",
+    "heroBadge": "Sa3dny / ساعدني",
+    "ctaBook": "Book a service",
+    "ctaLearn": "Learn how it works",
+    "trusted": "Trusted by families across Cairo & Giza",
+    "categoriesTitle": "Popular categories",
+    "howItWorks": "How Sa3dny works",
+    "features": [
+      "Instant scheduling with clear pricing",
+      "Arabic / English support built-in",
+      "Secure payments and Instapay verification",
+      "Timeline tracking for every booking"
+    ],
+    "satisfaction": "Customer satisfaction",
+    "steps": [
+      {
+        "title": "Browse & choose",
+        "description": "Pick a category, select a service, and review highlights with transparent pricing."
+      },
+      {
+        "title": "Confirm & pay",
+        "description": "Pay online or upload Instapay proof. Our team validates payments instantly."
+      },
+      {
+        "title": "Track in real time",
+        "description": "Follow the order timeline from assignment to completion, then leave a review."
+      }
+    ]
+  },
+  "about": {
+    "title": "About Sa3dny",
+    "mission": "We merge Arabic hospitality with reliable technology to simplify every home service.",
+    "pillars": [
+      "Workers are background checked and continuously rated.",
+      "Platform share is transparent: 25% platform, 75% workers.",
+      "Customer support can intervene, confirm payments, and reassign quickly."
+    ],
+    "vision": "A bilingual experience where families feel supported, informed, and in control.",
+    "cta": "Explore services"
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "q": "How are workers vetted?",
+        "a": "All workers are identity-verified, background-checked, and trained on client safety, service quality, and customer care standards."
+      },
+      {
+        "q": "How is payment handled?",
+        "a": "Pay online or via Instapay. Instapay uploads are reviewed by customer support before assigning a worker."
+      },
+      {
+        "q": "Can I book recurring services?",
+        "a": "Yes, create a recurring booking for weekly or monthly visits. Schedules can be paused or updated anytime from your dashboard."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "We respond in Arabic and English. Tell us what you need.",
+    "phone": "Call center",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "formTitle": "Send us a message",
+    "messagePlaceholder": "How can we help you?"
+  },
+  "servicesPage": {
+    "title": "Services",
+    "filters": "Filter by category",
+    "popular": "Recommended services",
+    "detailsTitle": "Service details",
+    "price": "Total price",
+    "duration": "Duration",
+    "highlights": "Highlights",
+    "bookNow": "Book now"
+  },
+  "auth": {
+    "loginTitle": "Welcome back",
+    "registerTitle": "Create your account",
+    "forgotTitle": "Reset password",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "forgotLink": "Forgot password?",
+    "ctaLogin": "Login",
+    "ctaRegister": "Register",
+    "ctaSend": "Send reset link",
+    "redirectNote": "After login you'll be redirected to {{path}}"
+  },
+  "settings": {
+    "platformEmail": "Platform email",
+    "supportHotline": "Support hotline",
+    "serviceTerms": "Service terms",
+    "policyHint": "Write a short service policy visible to users."
+  },
+  "shifts": {
+    "morning": "Morning shift",
+    "evening": "Evening shift"
+  },
+  "client": {
+    "dashboardTitle": "Client dashboard",
+    "profileTitle": "Profile & preferences",
+    "addressesTitle": "Addresses",
+    "idVerificationTitle": "ID verification",
+    "ordersTitle": "My orders",
+    "orderDetailsTitle": "Order details",
+    "reviewsTitle": "My reviews",
+    "bookTitle": "Book a service",
+    "paymentOptions": "Payment options",
+    "timeline": "Order timeline",
+    "reviewPrompt": "Share your experience",
+    "idRequirement": "Upload front and back of your national ID before your first booking."
+  },
+  "admin": {
+    "dashboardTitle": "Admin overview",
+    "servicesTitle": "Services",
+    "categoriesTitle": "Categories",
+    "clientsTitle": "Clients",
+    "workersTitle": "Workers",
+    "supportUsersTitle": "Support users",
+    "ordersTitle": "Orders",
+    "reviewsTitle": "Reviews",
+    "analyticsTitle": "Revenue & analytics",
+    "aiTitle": "AI insights",
+    "settingsTitle": "Settings",
+    "finance": "Finance split",
+    "platformShare": "Platform share",
+    "workersShare": "Workers share",
+    "activeClients": "Active this month",
+    "aiConfidence": "AI match confidence"
+  },
+  "support": {
+    "dashboardTitle": "Support dashboard",
+    "ordersTitle": "Incoming orders",
+    "workersTitle": "Workers",
+    "reviewsTitle": "Reviews",
+    "toolsTitle": "Tools",
+    "whatsappTitle": "WhatsApp job sheets",
+    "jobSheet": "Generate job sheet",
+    "activeVisits": "Active visits"
+  },
+  "sentiment": {
+    "positive": "Positive",
+    "neutral": "Neutral",
+    "negative": "Needs attention"
+  },
+  "common": {
+    "search": "Search",
+    "filters": "Filters",
+    "latestOrders": "Latest orders",
+    "bookingTimeline": "Booking timeline",
+    "payment": "Payment",
+    "price": "Total price",
+    "currency": "EGP",
+    "rating": "Rating",
+    "worker": "Worker",
+    "status": "Status",
+    "actions": "Actions",
+    "overview": "Overview",
+    "details": "Details",
+    "notes": "Notes",
+    "social": "Social",
+    "english": "English",
+    "arabic": "Arabic",
+    "id": "ID"
+  }
+}
