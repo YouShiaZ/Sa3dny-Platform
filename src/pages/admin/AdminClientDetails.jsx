@@ -14,7 +14,9 @@ export const AdminClientDetails = () => {
     <div className="space-y-4">
       <Card className="space-y-2">
         <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-slate-900">{client.name}</h1>
+          <h1 className="text-2xl font-bold text-slate-900">
+            {t(`clients.names.${client.name}`, { defaultValue: client.name })}
+          </h1>
           <Badge tone="admin">{t("admin.clientsTitle")}</Badge>
         </div>
         <div className="text-sm text-slate-600">{client.email}</div>
@@ -24,9 +26,15 @@ export const AdminClientDetails = () => {
         <h3 className="text-lg font-semibold text-slate-900">{t("client.addressesTitle")}</h3>
         {client.addresses.map((addr, idx) => (
           <div key={idx} className="rounded-xl bg-slate-50 px-3 py-2 text-sm">
-            <div className="font-semibold text-slate-900">{addr.label}</div>
-            <div className="text-slate-600">{addr.location}</div>
-            <div className="text-xs text-slate-500">{addr.notes}</div>
+            <div className="font-semibold text-slate-900">
+              {t(`clients.${client.id}.addresses.${idx}.label`, { defaultValue: addr.label })}
+            </div>
+            <div className="text-slate-600">
+              {t(`clients.${client.id}.addresses.${idx}.location`, { defaultValue: addr.location })}
+            </div>
+            <div className="text-xs text-slate-500">
+              {t(`clients.${client.id}.addresses.${idx}.notes`, { defaultValue: addr.notes })}
+            </div>
           </div>
         ))}
       </Card>
@@ -36,7 +44,9 @@ export const AdminClientDetails = () => {
           <div key={order.id} className="flex items-center justify-between rounded-xl bg-white px-3 py-2 shadow-inner">
             <div>
               <div className="font-semibold text-slate-900">{order.id}</div>
-              <div className="text-sm text-slate-600">{order.address}</div>
+              <div className="text-sm text-slate-600">
+                {t(`orders.${order.id}.address`, { defaultValue: order.address })}
+              </div>
             </div>
             <Badge status={order.status}>{t(`status.${order.status}`)}</Badge>
           </div>

@@ -12,14 +12,14 @@ export const SupportWhatsAppTemplates = () => {
         {orders.map((order) => {
           const service = services.find((s) => s.id === order.serviceId);
           const worker = workers.find((w) => w.id === order.workerId) || workers[0];
-          const text = `🔸 ${t("support.jobSheet")} - ${t("app.nameEn")}
+          const text = `🔸 ${t("support.jobSheet")} - ${t("app.nameAr")}
 ${t("admin.ordersTitle")}: ${order.id}
-${t("roles.client")}: ${order.clientName}
+${t("roles.client")}: ${t(`clients.names.${order.clientName}`, { defaultValue: order.clientName })}
 ${t("forms.service")}: ${t(`servicesDictionary.${service?.id}`, { defaultValue: service?.name })}
-${t("forms.address")}: ${order.address}
+${t("forms.address")}: ${t(`orders.${order.id}.address`, { defaultValue: order.address })}
 ${t("forms.date")}: ${order.date}
-${t("forms.notes")}: ${order.notes}
-${t("common.worker")}: ${worker.name}`;
+${t("forms.notes")}: ${t(`orders.${order.id}.notes`, { defaultValue: order.notes })}
+${t("common.worker")}: ${t(`workers.${worker.id}.name`, { defaultValue: worker.name })}`;
           return (
             <Card key={order.id} className="space-y-2">
               <div className="font-semibold text-slate-900">{order.id}</div>

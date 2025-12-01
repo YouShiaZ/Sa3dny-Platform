@@ -1,7 +1,7 @@
 {
   "app": {
     "nameEn": "Sa3dny",
-    "nameAr": "ساعدني",
+        "nameAr": "ساعدني",
     "tagline": "Home services that feel personal.",
     "description": "Sa3dny connects households with vetted specialists for cleaning, nursing, elderly care, and upholstery care across Egypt."
   },
@@ -29,7 +29,12 @@
     "whatsapp": "WhatsApp",
     "email": "Email",
     "terms": "Terms",
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "social": {
+      "linkedin": "LinkedIn",
+      "instagram": "Instagram",
+      "facebook": "Facebook"
+    }
   },
   "actions": {
     "bookService": "Book a service",
@@ -89,10 +94,22 @@
     "uploadPrompt": "Drag & drop or click to upload"
   },
   "categories": {
-    "housekeeping": "Housekeeping",
-    "nursing": "Nursing",
-    "elderly": "Elderly Care",
-    "carpets": "Carpets & Upholstery"
+    "housekeeping": {
+      "name": "Housekeeping",
+      "description": "Deep cleaning, recurring visits, and move-in readiness."
+    },
+    "nursing": {
+      "name": "Nursing",
+      "description": "Nurses for post-operation care, injections, and monitoring."
+    },
+    "elderly": {
+      "name": "Elderly Care",
+      "description": "Companionship, medication reminders, and light assistance."
+    },
+    "carpets": {
+      "name": "Carpets & Upholstery",
+      "description": "On-site carpet, sofa, and mattress cleaning."
+    }
   },
   "servicesDictionary": {
     "svc-deep-clean": "Deep Cleaning",
@@ -103,6 +120,50 @@
     "svc-elderly-night": "Night Companion",
     "svc-carpet": "Carpet Steam Clean",
     "svc-sofa": "Sofa & Mattress Refresh"
+  },
+  "services": {
+    "details": {
+      "svc-deep-clean": {
+        "summary": "Eco-friendly deep cleaning with full kitchen and bathroom coverage.",
+        "description": "A meticulous deep clean using eco-friendly products across high-touch areas, kitchen, bathrooms, and balconies.",
+        "highlights": ["Eco-friendly products", "Includes kitchen and bathrooms", "Team of two"]
+      },
+      "svc-quick-visit": {
+        "summary": "Fast tidy-up focused on high-traffic spaces.",
+        "description": "A focused session for living areas and entries with the option to schedule recurring weekly visits.",
+        "highlights": ["Weekly recurring option", "Focus on high-traffic areas"]
+      },
+      "svc-post-op": {
+        "summary": "Qualified nursing care after operations.",
+        "description": "Certified nursing support for wound care, medication, and vitals monitoring with doctor coordination.",
+        "highlights": ["Wound care", "Vitals monitoring", "Doctor liaison"]
+      },
+      "svc-daily-check": {
+        "summary": "Daily health check for medication and vitals.",
+        "description": "Routine health checks covering medication reminders, blood pressure, and sugar tracking.",
+        "highlights": ["Medication reminders", "Blood pressure and sugar tracking"]
+      },
+      "svc-elderly-day": {
+        "summary": "Day companion for elderly care and updates.",
+        "description": "Companionship, light movement help, meal preparation, and family updates during the day.",
+        "highlights": ["Light movement assistance", "Meal preparation", "Family updates"]
+      },
+      "svc-elderly-night": {
+        "summary": "Overnight observation for peace of mind.",
+        "description": "Night companion ensuring safety checks, rest support, and attentive observation.",
+        "highlights": ["Overnight observation", "Sleep safety checks"]
+      },
+      "svc-carpet": {
+        "summary": "Steam clean carpets with anti-bacterial finish.",
+        "description": "Professional steam treatment for carpets with anti-bacterial protection and stain targeting.",
+        "highlights": ["Industrial steam", "Anti-bacterial treatment"]
+      },
+      "svc-sofa": {
+        "summary": "Refresh sofas and mattresses with quick drying.",
+        "description": "Upholstery refresh that treats stains and leaves fabrics fresh and ready within hours.",
+        "highlights": ["Dry in 2 hours", "Stain pre-treatment"]
+      }
+    }
   },
   "levels": {
     "Bronze": "Bronze",
@@ -246,6 +307,10 @@
     "ordersTitle": "Incoming orders",
     "workersTitle": "Workers",
     "reviewsTitle": "Reviews",
+    "reviews": {
+      "title": "Reviews",
+      "empty": "No reviews yet."
+    },
     "toolsTitle": "Tools",
     "whatsappTitle": "WhatsApp job sheets",
     "jobSheet": "Generate job sheet",
@@ -255,6 +320,60 @@
     "positive": "Positive",
     "neutral": "Neutral",
     "negative": "Needs attention"
+  },
+  "orders": {
+    "ORD-1201": { "address": "New Cairo - Fifth Settlement", "notes": "Focus on kitchen and balcony" },
+    "ORD-1202": { "address": "Heliopolis - Merghany", "notes": "Post knee surgery follow-up" },
+    "ORD-1203": { "address": "Zayed - Beverly Hills", "notes": "Living room and guest room" },
+    "ORD-1204": { "address": "New Cairo - Fifth Settlement", "notes": "Daily companion for mother" }
+  },
+  "clients": {
+    "client-102": {
+      "addresses": [
+        { "label": "Primary", "location": "New Cairo - Fifth Settlement", "notes": "Gate 3, Villa 12" },
+        { "label": "Office", "location": "Maadi - Corniche", "notes": "Floor 5, reception" }
+      ]
+    },
+    "client-103": {
+      "addresses": [
+        { "label": "Primary", "location": "Heliopolis - Merghany", "notes": "Building 7" }
+      ]
+    },
+    "client-104": {
+      "addresses": [
+        { "label": "Primary", "location": "Zayed - Beverly Hills", "notes": "Villa 18" }
+      ]
+    },
+    "names": {
+      "Maya Hassan": "Maya Hassan",
+      "Ali Tarek": "Ali Tarek",
+      "Farah Nabil": "Farah Nabil"
+    }
+  },
+  "workers": {
+    "worker-lina": { "name": "Lina Mansour", "area": "New Cairo" },
+    "worker-samir": { "name": "Samir Fouad", "area": "Nasr City" },
+    "worker-noura": { "name": "Noura Helmy", "area": "Heliopolis" },
+    "worker-amgad": { "name": "Amgad Salem", "area": "Maadi" },
+    "names": {
+      "Lina Mansour": "Lina Mansour",
+      "Samir Fouad": "Samir Fouad"
+    }
+  },
+  "reviews": {
+    "rev-1": { "comment": "The team was punctual and meticulous. Great care with the kitchen appliances." },
+    "rev-2": { "comment": "Nurse Samir followed the doctor's plan perfectly. Minor delay in arrival." },
+    "rev-3": { "comment": "Removed old stains and smelled fresh. Would book again." }
+  },
+  "ai": {
+    "suggestions": {
+      "ORD-1201": { "reason": "Proximity to New Cairo and recent 5-star streak in housekeeping." },
+      "ORD-1202": { "reason": "Certified nurse, handled 12 similar post-op orders this month." }
+    }
+  },
+  "supportUsers": {
+    "sup-1": { "notes": "Escalations" },
+    "sup-2": { "notes": "Instapay verification" }
   },
   "common": {
     "search": "Search",
@@ -274,6 +393,7 @@
     "social": "Social",
     "english": "English",
     "arabic": "Arabic",
-    "id": "ID"
+        "id": "ID",
+    "viewWebsite": "View Website"
   }
 }

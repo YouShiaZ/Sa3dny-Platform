@@ -106,11 +106,11 @@ export const Home = () => {
             const Icon = icons[cat.id];
             return (
               <Card key={cat.id} className="flex flex-col gap-3">
-                <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3">
                   {Icon && <Icon className="text-user-primary" size={20} />}
                   <div>
-                    <div className="text-lg font-semibold text-slate-900">{t(`categories.${cat.id}`)}</div>
-                    <p className="text-sm text-slate-600">{cat.description}</p>
+                    <div className="text-lg font-semibold text-slate-900">{t(`categories.${cat.id}.name`)}</div>
+                    <p className="text-sm text-slate-600">{t(`categories.${cat.id}.description`)}</p>
                   </div>
                 </div>
                 <Link to={`/services?category=${cat.id}`} className="text-sm font-semibold text-user-primary hover:underline">

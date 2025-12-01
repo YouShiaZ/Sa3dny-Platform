@@ -10,7 +10,11 @@ export const SupportOrders = () => {
 
   const columns = [
     { key: "id", label: t("common.id") },
-    { key: "clientName", label: t("roles.client") },
+    {
+      key: "clientName",
+      label: t("roles.client"),
+      render: (row) => t(`clients.names.${row.clientName}`, { defaultValue: row.clientName }),
+    },
     { key: "status", label: t("common.status"), render: (row) => <Badge status={row.status}>{t(`status.${row.status}`)}</Badge> },
     { key: "paymentMethod", label: t("forms.paymentMethod"), render: (row) => t(`forms.${row.paymentMethod === "online" ? "onlinePayment" : "instapay"}`) },
     {

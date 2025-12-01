@@ -17,9 +17,11 @@ export const AdminAIInsights = () => {
             </div>
             <div className="text-lg font-semibold text-slate-900">{item.orderId}</div>
             <div className="text-sm text-slate-600">
-              {item.suggestedWorker}
+              {t(`workers.names.${item.suggestedWorker}`, { defaultValue: item.suggestedWorker })}
             </div>
-            <p className="text-sm text-slate-600">{item.reason}</p>
+            <p className="text-sm text-slate-600">
+              {t(`ai.suggestions.${item.orderId}.reason`, { defaultValue: item.reason })}
+            </p>
           </Card>
         ))}
       </div>

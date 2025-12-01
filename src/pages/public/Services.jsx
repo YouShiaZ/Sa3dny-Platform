@@ -30,7 +30,7 @@ export const Services = () => {
               { value: "all", label: t("actions.viewAll") },
               ...serviceCategories.map((cat) => ({
                 value: cat.id,
-                label: t(`categories.${cat.id}`),
+                label: t(`categories.${cat.id}.name`),
               })),
             ]}
           />
@@ -48,8 +48,8 @@ export const Services = () => {
         <div className="mt-3 grid gap-3 md:grid-cols-4">
           {serviceCategories.map((cat) => (
             <Card key={cat.id} className="space-y-2">
-              <div className="text-lg font-semibold text-slate-900">{t(`categories.${cat.id}`)}</div>
-              <p className="text-sm text-slate-600">{cat.description}</p>
+              <div className="text-lg font-semibold text-slate-900">{t(`categories.${cat.id}.name`)}</div>
+              <p className="text-sm text-slate-600">{t(`categories.${cat.id}.description`)}</p>
               <Badge tone="user" className="w-fit">
                 {services.filter((s) => s.categoryId === cat.id).length} {t("nav.services")}
               </Badge>

@@ -18,8 +18,8 @@ export const AdminCategories = () => {
       <div className="grid gap-3 md:grid-cols-3">
         {serviceCategories.map((cat) => (
           <Card key={cat.id} className="space-y-2">
-            <div className="text-lg font-semibold text-slate-900">{t(`categories.${cat.id}`)}</div>
-            <p className="text-sm text-slate-600">{cat.description}</p>
+            <div className="text-lg font-semibold text-slate-900">{t(`categories.${cat.id}.name`)}</div>
+            <p className="text-sm text-slate-600">{t(`categories.${cat.id}.description`)}</p>
             <Link to={`/admin/categories/${cat.id}/edit`} className="text-sm font-semibold text-admin-primary">
               {t("actions.edit")}
             </Link>

@@ -29,19 +29,22 @@ export const BookService = () => {
     navigate("/client/orders");
   };
 
+  const highlights =
+    t(`services.details.${service.id}.highlights`, { returnObjects: true, defaultValue: service.highlights }) || [];
+
   return (
     <div className="grid gap-4 md:grid-cols-3">
       <Card className="md:col-span-2 space-y-3">
         <h1 className="text-2xl font-bold text-slate-900">{t("client.bookTitle")}</h1>
         <form className="space-y-3" onSubmit={submit}>
-          <Select
-            label={t("forms.category")}
-            value={form.categoryId}
-            onChange={(e) => setForm({ ...form, categoryId: e.target.value })}
-            options={[
-              { value: service.categoryId, label: t(`categories.${service.categoryId}`) },
+        <Select
+          label={t("forms.category")}
+          value={form.categoryId}
+          onChange={(e) => setForm({ ...form, categoryId: e.target.value })}
+          options={[
+              { value: service.categoryId, label: t(`categories.${service.categoryId}.name`) },
             ]}
-          />
+        />
           <Select
             label={t("forms.service")}
             value={form.serviceId}
@@ -85,7 +88,7 @@ export const BookService = () => {
           {t("servicesPage.duration")}: {service.duration}
         </div>
         <div className="space-y-2">
-          {service.highlights.map((item) => (
+          {highlights.map((item) => (
             <div key={item} className="rounded-xl bg-white px-3 py-2 text-sm text-slate-700 shadow-inner">
               {item}
             </div>

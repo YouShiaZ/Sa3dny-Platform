@@ -19,7 +19,11 @@ export const ClientOrders = () => {
           const svc = services.find((s) => s.id === order.serviceId);
           return (
             <Link key={order.id} to={`/client/orders/${order.id}`}>
-              <OrderCard order={order} serviceName={svc?.name} workerName="-" />
+              <OrderCard
+                order={order}
+                serviceName={t(`servicesDictionary.${svc?.id}`, { defaultValue: svc?.name })}
+                workerName="-"
+              />
             </Link>
           );
         })}

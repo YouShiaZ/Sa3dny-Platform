@@ -27,7 +27,15 @@ export const ClientDashboard = () => {
         <div className="grid gap-3 md:grid-cols-2">
           {latestOrders.map((order) => {
             const svc = services.find((s) => s.id === order.serviceId);
-            return <OrderCard key={order.id} order={order} serviceName={svc?.name} workerName="-" tone="user" />;
+            return (
+              <OrderCard
+                key={order.id}
+                order={order}
+                serviceName={t(`servicesDictionary.${svc?.id}`, { defaultValue: svc?.name })}
+                workerName="-"
+                tone="user"
+              />
+            );
           })}
         </div>
       </Card>

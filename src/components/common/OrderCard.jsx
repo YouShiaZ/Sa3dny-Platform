@@ -17,7 +17,9 @@ export const OrderCard = ({ order, serviceName, workerName, tone = "user" }) => 
         </div>
         <div className="text-right text-sm text-slate-600">
           <div className="font-semibold">{serviceName}</div>
-          <div className="text-slate-500">{order.clientName}</div>
+          <div className="text-slate-500">
+            {t(`clients.names.${order.clientName}`, { defaultValue: order.clientName })}
+          </div>
         </div>
       </div>
       <div className="grid grid-cols-1 gap-3 text-sm text-slate-700 md:grid-cols-3">
@@ -25,7 +27,7 @@ export const OrderCard = ({ order, serviceName, workerName, tone = "user" }) => 
           <Calendar size={16} /> {order.date}
         </div>
         <div className="inline-flex items-center gap-2 rounded-lg bg-slate-50 px-3 py-2">
-          <MapPin size={16} /> {order.address}
+          <MapPin size={16} /> {t(`orders.${order.id}.address`, { defaultValue: order.address })}
         </div>
         <div className="inline-flex items-center gap-2 rounded-lg bg-slate-50 px-3 py-2">
           <CreditCard size={16} /> {t(`forms.${order.paymentMethod === "online" ? "onlinePayment" : "instapay"}`)}

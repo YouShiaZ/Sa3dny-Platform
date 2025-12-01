@@ -26,7 +26,9 @@ export const AdminSupportUserDetails = () => {
       </div>
       <div className="text-sm text-slate-700">{user.phone}</div>
       <div className="text-sm text-slate-700">{t("forms.time")}: {t(`shifts.${user.shift}`)}</div>
-      <div className="rounded-xl bg-slate-50 px-3 py-2 text-sm text-slate-600">{user.notes}</div>
+      <div className="rounded-xl bg-slate-50 px-3 py-2 text-sm text-slate-600">
+        {t(`supportUsers.${id}.notes`, { defaultValue: user.notes })}
+      </div>
     </Card>
   );
 };

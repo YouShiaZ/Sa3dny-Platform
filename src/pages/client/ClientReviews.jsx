@@ -20,15 +20,25 @@ export const ClientReviews = () => {
     <div className="grid gap-4 md:grid-cols-2">
       <Card className="space-y-3">
         <h2 className="text-xl font-semibold text-slate-900">{t("client.reviewsTitle")}</h2>
-        {list.map((rev) => (
-          <div key={rev.id} className="rounded-xl border border-slate-100 bg-slate-50 px-3 py-2">
-            <div className="flex items-center justify-between">
-              <div className="font-semibold text-slate-900">{rev.client}</div>
-              <div className="text-amber-500">{"★".repeat(rev.rating)}</div>
+        {list.map((rev) => {
+          const svc = services.find((s) => s.id === rev.service || s.name === rev.service || s.id === rev.serviceId);
+          return (
+            <div key={rev.id} className="rounded-xl border border-slate-100 bg-slate-50 px-3 py-2">
+              <div className="flex items-center justify-between">
+                <div className="font-semibold text-slate-900">
+                  {t(`clients.names.${rev.client}`, { defaultValue: rev.client })}
+                </div>
+                <div className="text-amber-500">{"★".repeat(rev.rating)}</div>
+              </div>
+              <div className="text-xs text-slate-500">
+                {t(`servicesDictionary.${svc?.id}`, { defaultValue: svc?.name })}
+              </div>
+              <div className="text-sm text-slate-600">
+                {t(`reviews.${rev.id}.comment`, { defaultValue: rev.comment })}
+              </div>
             </div>
-            <div className="text-sm text-slate-600">{rev.comment}</div>
-          </div>
-        ))}
+          );
+        })}
       </Card>
       <Card className="space-y-3">
         <h3 className="text-lg font-semibold text-slate-900">{t("client.reviewPrompt")}</h3>
@@ -40,7 +50,9 @@ export const ClientReviews = () => {
             className="w-full rounded-xl border border-slate-200 px-3 py-2"
           >
             {services.map((svc) => (
-              <option key={svc.id} value={svc.id}>{svc.name}</option>
+              <option key={svc.id} value={svc.id}>
+                {t(`servicesDictionary.${svc.id}`, { defaultValue: svc.name })}
+              </option>
             ))}
           </select>
           <div className="flex gap-2 text-sm">

@@ -1,15 +1,16 @@
-import { Outlet, NavLink, useNavigate } from "react-router-dom";
+import { Outlet, NavLink, useNavigate, Link } from "react-router-dom";
 import { LayoutDashboard, FolderKanban, Layers, Users, Headphones, Briefcase, Settings, LineChart, Sparkles, ClipboardList } from "lucide-react";
 import { AdminBackground } from "./AnimatedBackgrounds";
 import { useTranslation } from "react-i18next";
 import { Button } from "../common/Button";
 import { useAuthStore } from "../../store/authStore";
-import { LanguageSwitcher } from "../common/LanguageSwitcher";
+import { MainNavbar } from "./MainNavbar";
 
 export const AdminLayout = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { user, logout } = useAuthStore();
   const navigate = useNavigate();
+  const isRTL = i18n.language === "ar";
 
   const navItems = [
     { to: "/admin/dashboard", label: t("admin.dashboardTitle"), icon: LayoutDashboard },
@@ -27,15 +28,13 @@ export const AdminLayout = () => {
   return (
     <div className="relative min-h-screen bg-admin.background">
       <AdminBackground />
-      <div className="flex">
-        <aside className="sticky top-0 hidden h-screen w-64 flex-col gap-4 border-r border-white/50 bg-white/80 p-4 shadow-card backdrop-blur lg:flex">
-          <div className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-admin-primary text-white font-bold">A</div>
-            <div>
-              <div className="font-bold text-slate-900">{t("app.nameEn")}</div>
-              <div className="text-xs text-admin-primary">{t("roles.admin")}</div>
-            </div>
-          </div>
+      <MainNavbar />
+      <div className="flex px-6 pb-6">
+        <aside
+          className={`sticky top-28 hidden h-screen w-56 flex-col gap-4 overflow-y-auto border-r border-white/50 bg-white/80 p-4 shadow-card backdrop-blur lg:flex ${
+            isRTL ? "mt-24 mr-6" : "mt-16 ml-6"
+          }`}
+        >
           <nav className="flex flex-1 flex-col gap-1">
             {navItems.map((item) => (
               <NavLink
@@ -51,15 +50,14 @@ export const AdminLayout = () => {
             ))}
           </nav>
           <div className="flex flex-col gap-2">
-            <LanguageSwitcher />
             <Button tone="admin" variant="ghost" onClick={() => { logout(); navigate("/"); }}>
               {t("actions.logout")}
             </Button>
           </div>
         </aside>
-        <div className="flex-1 p-4 lg:p-8">
-          <header className="mb-6 flex items-center justify-between">
-            <div>
+        <div className="flex-1 pt-4 lg:pt-6 lg:pl-8">
+          <header className="mb-4 flex flex-wrap items-center justify-between gap-4">
+            <div className="flex flex-col">
               <h1 className="text-2xl font-bold text-slate-900">{t("admin.dashboardTitle")}</h1>
               <p className="text-sm text-slate-600">{t("app.tagline")}</p>
             </div>
@@ -69,10 +67,9 @@ export const AdminLayout = () => {
                 placeholder={t("common.search")}
                 className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm shadow-inner outline-none"
               />
-              <div className="hidden items-center gap-2 rounded-full bg-white px-3 py-2 text-sm font-semibold text-slate-700 shadow-card sm:flex">
-                <span>{user?.name || "Admin"}</span>
-              </div>
-              <LanguageSwitcher />
+              <Button as={Link} to="/" tone="admin" variant="ghost">
+                {t("common.viewWebsite")}
+              </Button>
             </div>
           </header>
           <Outlet />

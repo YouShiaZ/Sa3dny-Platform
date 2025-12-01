@@ -29,11 +29,15 @@ export const AdminOrderDetails = () => {
       <Card className="grid gap-4 md:grid-cols-3">
         <div>
           <div className="text-sm text-slate-500">{t("roles.client")}</div>
-          <div className="font-semibold text-slate-900">{order.clientName}</div>
+          <div className="font-semibold text-slate-900">
+            {t(`clients.names.${order.clientName}`, { defaultValue: order.clientName })}
+          </div>
         </div>
         <div>
           <div className="text-sm text-slate-500">{t("forms.address")}</div>
-          <div className="font-semibold text-slate-900">{order.address}</div>
+          <div className="font-semibold text-slate-900">
+            {t(`orders.${order.id}.address`, { defaultValue: order.address })}
+          </div>
         </div>
         <div>
           <div className="text-sm text-slate-500">{t("common.price")}</div>
@@ -62,14 +66,16 @@ export const AdminOrderDetails = () => {
             className="rounded-xl border border-slate-200 px-3 py-2"
           >
             {workers.map((w) => (
-              <option key={w.id} value={w.id}>{w.name}</option>
+              <option key={w.id} value={w.id}>{t(`workers.${w.id}.name`, { defaultValue: w.name })}</option>
             ))}
           </select>
           <Button tone="admin">{t("actions.assign")}</Button>
         </div>
         <div className="space-y-2">
           <div className="text-sm font-semibold text-slate-800">{t("common.details")}</div>
-          <div className="rounded-xl bg-slate-50 px-3 py-2 text-sm text-slate-700">{order.notes}</div>
+          <div className="rounded-xl bg-slate-50 px-3 py-2 text-sm text-slate-700">
+            {t(`orders.${order.id}.notes`, { defaultValue: order.notes })}
+          </div>
         </div>
       </Card>
       <Card className="space-y-2">

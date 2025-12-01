@@ -33,7 +33,7 @@ export const AdminServiceForm = () => {
           label={t("forms.category")}
           value={form.categoryId}
           onChange={(e) => setForm({ ...form, categoryId: e.target.value })}
-          options={serviceCategories.map((cat) => ({ value: cat.id, label: t(`categories.${cat.id}`) }))}
+          options={serviceCategories.map((cat) => ({ value: cat.id, label: t(`categories.${cat.id}.name`) }))}
         />
         <Input label={t("servicesPage.price")} value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} />
         <Input label={t("servicesPage.duration")} value={form.duration} onChange={(e) => setForm({ ...form, duration: e.target.value })} />

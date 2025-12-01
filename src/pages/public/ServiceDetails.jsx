@@ -10,6 +10,12 @@ export const ServiceDetails = () => {
   const { id } = useParams();
   const { t } = useTranslation();
   const service = services.find((svc) => svc.id === id);
+  const highlights =
+    t(`services.details.${service?.id}.highlights`, { returnObjects: true, defaultValue: service?.highlights || [] }) ||
+    [];
+  const description = t(`services.details.${service?.id}.description`, {
+    defaultValue: service?.highlights?.join(" • "),
+  });
 
   if (!service) {
     return <div className="rounded-2xl bg-white p-6 text-slate-700 shadow-card">{t("actions.viewDetails")}</div>;
@@ -21,7 +27,7 @@ export const ServiceDetails = () => {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold text-slate-900">{t(`servicesDictionary.${service.id}`, { defaultValue: service.name })}</h1>
-            <p className="text-sm text-slate-600">{t(`categories.${service.categoryId}`)}</p>
+            <p className="text-sm text-slate-600">{t(`categories.${service.categoryId}.name`)}</p>
           </div>
           <Badge tone="user" className="text-sm">
             {t("servicesPage.duration")}: {service.duration}
@@ -37,8 +43,9 @@ export const ServiceDetails = () => {
         </div>
         <div>
           <h3 className="text-lg font-semibold text-slate-900">{t("servicesPage.highlights")}</h3>
+          <div className="text-sm text-slate-600">{description}</div>
           <div className="mt-2 grid gap-2 md:grid-cols-2">
-            {service.highlights.map((item) => (
+            {highlights.map((item) => (
               <div key={item} className="rounded-xl bg-slate-50 px-3 py-2 text-sm text-slate-700">
                 {item}
               </div>

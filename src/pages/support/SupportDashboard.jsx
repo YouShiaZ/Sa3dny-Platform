@@ -23,7 +23,9 @@ export const SupportDashboard = () => {
           <div key={order.id} className="flex items-center justify-between rounded-xl bg-white px-3 py-2 shadow-inner">
             <div>
               <div className="font-semibold text-slate-900">{order.id}</div>
-              <div className="text-xs text-slate-500">{order.address}</div>
+              <div className="text-xs text-slate-500">
+                {t(`orders.${order.id}.address`, { defaultValue: order.address })}
+              </div>
             </div>
             <Badge status={order.status}>{t(`status.${order.status}`)}</Badge>
           </div>

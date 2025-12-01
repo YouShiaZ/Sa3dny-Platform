@@ -6,6 +6,12 @@ import { useTranslation } from "react-i18next";
 
 export const ServiceCard = ({ service, onSelect, tone = "user" }) => {
   const { t } = useTranslation();
+  const highlights =
+    t(`services.details.${service.id}.highlights`, { returnObjects: true, defaultValue: service.highlights }) || [];
+  const summary =
+    t(`services.details.${service.id}.summary`, {
+      defaultValue: Array.isArray(service.highlights) ? service.highlights.slice(0, 2).join(" • ") : "",
+    });
 
   return (
     <motion.div
@@ -15,7 +21,7 @@ export const ServiceCard = ({ service, onSelect, tone = "user" }) => {
       <div className="flex flex-col gap-3">
         <div className="flex items-center justify-between">
           <h3 className="text-lg font-semibold text-slate-900">{t(`servicesDictionary.${service.id}`, { defaultValue: service.name })}</h3>
-          <Badge tone={tone}>{t(`categories.${service.categoryId}`)}</Badge>
+          <Badge tone={tone}>{t(`categories.${service.categoryId}.name`)}</Badge>
         </div>
         <div className="flex items-center gap-3 text-sm text-slate-600">
           <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-3 py-1">
@@ -26,10 +32,10 @@ export const ServiceCard = ({ service, onSelect, tone = "user" }) => {
           </span>
         </div>
         <p className="text-sm text-slate-600">
-          {service.highlights.slice(0, 2).join(" • ")}
+          {summary}
         </p>
         <div className="flex flex-wrap gap-2">
-          {service.highlights.map((item) => (
+          {highlights?.map((item) => (
             <Badge key={item} tone={tone} className="bg-slate-100 text-slate-700">
               {item}
             </Badge>

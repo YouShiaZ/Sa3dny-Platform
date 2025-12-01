@@ -22,9 +22,15 @@ export const ClientAddresses = () => {
         <h2 className="text-xl font-semibold text-slate-900">{t("client.addressesTitle")}</h2>
         {addresses.map((addr, idx) => (
           <div key={idx} className="rounded-xl border border-slate-100 bg-slate-50 px-3 py-2">
-            <div className="font-semibold text-slate-900">{addr.label}</div>
-            <div className="text-sm text-slate-600">{addr.location}</div>
-            <div className="text-xs text-slate-500">{addr.notes}</div>
+            <div className="font-semibold text-slate-900">
+              {t(`clients.${clients[0].id}.addresses.${idx}.label`, { defaultValue: addr.label })}
+            </div>
+            <div className="text-sm text-slate-600">
+              {t(`clients.${clients[0].id}.addresses.${idx}.location`, { defaultValue: addr.location })}
+            </div>
+            <div className="text-xs text-slate-500">
+              {t(`clients.${clients[0].id}.addresses.${idx}.notes`, { defaultValue: addr.notes })}
+            </div>
           </div>
         ))}
       </Card>

@@ -15,13 +15,13 @@ export const SupportOrderDetails = () => {
   const [workerId, setWorkerId] = useState(order.workerId || workers[0].id);
   const [open, setOpen] = useState(false);
   const service = services.find((s) => s.id === order.serviceId);
-  const jobSheet = `${t("support.jobSheet")} - ${t("app.nameEn")}
+  const jobSheet = `${t("support.jobSheet")} - ${t("app.nameAr")}
 ${t("admin.ordersTitle")}: ${order.id}
-${t("roles.client")}: ${order.clientName}
+${t("roles.client")}: ${t(`clients.names.${order.clientName}`, { defaultValue: order.clientName })}
 ${t("forms.service")}: ${t(`servicesDictionary.${service?.id}`, { defaultValue: service?.name })}
-${t("forms.address")}: ${order.address}
-${t("forms.notes")}: ${order.notes}
-${t("actions.assign")}: ${workers.find((w) => w.id === workerId)?.name}
+${t("forms.address")}: ${t(`orders.${order.id}.address`, { defaultValue: order.address })}
+${t("forms.notes")}: ${t(`orders.${order.id}.notes`, { defaultValue: order.notes })}
+${t("actions.assign")}: ${t(`workers.${workerId}.name`, { defaultValue: workers.find((w) => w.id === workerId)?.name })}
 ${t("common.status")}: ${t(`status.${order.status}`)}`;
 
   return (
@@ -40,7 +40,9 @@ ${t("common.status")}: ${t(`status.${order.status}`)}`;
         </div>
         <div>
           <div className="text-sm text-slate-500">{t("forms.address")}</div>
-          <div className="font-semibold text-slate-900">{order.address}</div>
+          <div className="font-semibold text-slate-900">
+            {t(`orders.${order.id}.address`, { defaultValue: order.address })}
+          </div>
         </div>
         <div>
           <div className="text-sm text-slate-500">{t("common.worker")}</div>
@@ -50,7 +52,7 @@ ${t("common.status")}: ${t(`status.${order.status}`)}`;
             className="rounded-xl border border-slate-200 px-3 py-2"
           >
             {workers.map((w) => (
-              <option key={w.id} value={w.id}>{w.name}</option>
+              <option key={w.id} value={w.id}>{t(`workers.${w.id}.name`, { defaultValue: w.name })}</option>
             ))}
           </select>
           <Button tone="support" className="mt-2">{t("actions.assign")}</Button>
