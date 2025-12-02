@@ -1,16 +1,20 @@
+import { useState } from "react";
 import { Outlet, NavLink, useNavigate, Link } from "react-router-dom";
-import { LayoutDashboard, FolderKanban, Layers, Users, Headphones, Briefcase, Settings, LineChart, Sparkles, ClipboardList } from "lucide-react";
+import { LayoutDashboard, FolderKanban, Layers, Users, Headphones, Briefcase, Settings, LineChart, Sparkles, ClipboardList, Menu } from "lucide-react";
 import { AdminBackground } from "./AnimatedBackgrounds";
 import { useTranslation } from "react-i18next";
 import { Button } from "../common/Button";
 import { useAuthStore } from "../../store/authStore";
 import { MainNavbar } from "./MainNavbar";
+import { MobileDrawer } from "./MobileDrawer";
+import { AnimatePresence } from "framer-motion";
 
 export const AdminLayout = () => {
   const { t, i18n } = useTranslation();
   const { user, logout } = useAuthStore();
   const navigate = useNavigate();
   const isRTL = i18n.language === "ar";
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const navItems = [
     { to: "/admin/dashboard", label: t("admin.dashboardTitle"), icon: LayoutDashboard },
@@ -57,9 +61,18 @@ export const AdminLayout = () => {
         </aside>
         <div className="flex-1 pt-4 lg:pt-6 lg:pl-8">
           <header className="mb-4 flex flex-wrap items-center justify-between gap-4">
-            <div className="flex flex-col">
-              <h1 className="text-2xl font-bold text-slate-900">{t("admin.dashboardTitle")}</h1>
-              <p className="text-sm text-slate-600">{t("app.tagline")}</p>
+            <div className="flex items-center gap-3">
+              <button
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white shadow-inner lg:hidden"
+                onClick={() => setMobileNavOpen(true)}
+                aria-label="Open admin menu"
+              >
+                <Menu size={18} />
+              </button>
+              <div className="flex flex-col">
+                <h1 className="text-2xl font-bold text-slate-900">{t("admin.dashboardTitle")}</h1>
+                <p className="text-sm text-slate-600">{t("app.tagline")}</p>
+              </div>
             </div>
             <div className="flex items-center gap-3">
               <input
@@ -75,6 +88,32 @@ export const AdminLayout = () => {
           <Outlet />
         </div>
       </div>
+      <MobileDrawer
+        open={mobileNavOpen}
+        isRTL={isRTL}
+        onClose={() => setMobileNavOpen(false)}
+        header={
+          <>
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-admin-primary text-white font-bold">A</div>
+            <div className="flex flex-col leading-tight">
+              <span className="font-bold text-slate-900">{t("app.nameEn")}</span>
+              <span className="text-xs text-admin-primary">{t("roles.admin")}</span>
+            </div>
+          </>
+        }
+        items={navItems}
+      >
+        <Button
+          variant="ghost"
+          className="w-full"
+          onClick={() => {
+            logout();
+            navigate("/");
+          }}
+        >
+          {t("actions.logout")}
+        </Button>
+      </MobileDrawer>
     </div>
   );
 };

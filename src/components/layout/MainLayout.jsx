@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next";
 import { Outlet, Link } from "react-router-dom";
 import { UserBackground } from "./AnimatedBackgrounds";
 import { MainNavbar } from "./MainNavbar";
-
 export const MainLayout = () => {
   const { t } = useTranslation();
 
